@@ -107,7 +107,16 @@
   .navlinks{display:flex; gap:28px; font-family:'JetBrains Mono',monospace; font-size:0.72rem; text-transform:uppercase;}
   .navlinks a{opacity:0.7; text-decoration:none; transition:opacity .2s, color .2s;}
   .navlinks a:hover{opacity:1; color:var(--tungsten);}
-  @media (max-width:640px){ .navlinks{gap:16px;} .navlinks span{display:none;} }
+  @media (max-width:640px){
+    nav .wrap{ flex-wrap:wrap; height:auto; padding:14px 28px; row-gap:12px; }
+    .navlinks{
+      width:100%; gap:18px; justify-content:flex-start;
+      overflow-x:auto; white-space:nowrap; -webkit-overflow-scrolling:touch;
+      -ms-overflow-style:none; scrollbar-width:none;
+    }
+    .navlinks::-webkit-scrollbar{ display:none; }
+    .navlinks span{display:none;}
+  }
 
   /* ---------- HERO ---------- */
   .hero{
